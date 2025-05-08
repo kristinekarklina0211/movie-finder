@@ -1,3 +1,50 @@
 body {
     font-family: "Inter", sans-serif;
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+}
+
+.movies {
+    display: flex;
+    gap: 24px;
+}
+
+.movies__input {
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding-left: 10px;
+    
+    width: 50%;
+    border: 1px solid #000;
+
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.6px;
+}
+
+.movies__search-btn {
+    width: 25%;
+    border: none;
+    cursor: pointer;
+    background: #0094FF;
+
+    color: #FFF;
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
 }
