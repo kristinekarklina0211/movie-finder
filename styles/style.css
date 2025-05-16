@@ -41,11 +41,22 @@ body {
 
     border: none;
     cursor: pointer;
-    background: #0094FF;
 
     color: #FFF;
     font-family: inherit;
     font-size: 32px;
+}
+
+/* Start screen */
+
+.start-screen_btn {
+    background: #0094FF;
+}
+
+/* Results screen */
+
+.results-screen_btn {
+    background: #000;
 }
 
 @media (max-width: 961px) {    
