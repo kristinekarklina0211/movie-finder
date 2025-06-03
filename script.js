@@ -44,7 +44,7 @@ function clearInput() {
 // 3. Функция поиска фильмов
 function findMovie(movieTitle) {
     const apiKey = "6dde023";
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${movieTitle}`;
+    const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${movieTitle}`;
 
     fetch(url)
         .then(response => response.json())
