@@ -14,6 +14,7 @@ body {
 }
 
 .movies {
+    margin-bottom: 48px;
     display: flex;
     gap: 24px;
 }
@@ -59,32 +60,132 @@ body {
     background: #000;
 }
 
+/* Movie list */
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.movie {
+    width: 80%;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.movie:hover {
+    border-radius: 35px;
+    background: #D9D9D9;
+    cursor: pointer;
+}
+
+.movie__poster {
+    width: 150px;
+}
+
+.movie__title {
+    margin-bottom: 10px;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.movie__year {
+    margin-bottom: 10px;
+
+    color: #0094FF;
+    font-size: 25px;
+}
+
+.movie__type {
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
 @media (max-width: 961px) {    
     .container {
-        padding: 70px;
+        padding: 60px;
+    }
+
+    .movies {
+        gap: 20px;
     }
     
     .movies__input,
     .movies__search-btn {
-        font-size: 30px;
+        height: 50px;
+        font-size: 26px;
+    }
+
+    .movies__search-btn {
+        width: 200px;
+    }
+
+    /* Movie list */
+    .movie {
+        width: 100%;
+        padding: 25px;
+        gap: 30px;
+    }
+
+    .movie__poster {
+        width: 120px;
+    }
+
+    .movie__title {
+        font-size: 26px;
+    }
+
+    .movie__year {
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+    .movie__type {
+        font-size: 22px;
     }
 }
 
 @media (max-width: 767px) {    
     .container {
-        padding: 50px;
+        padding: 40px;
     }
     
     .movies {
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
     }
 
     .movies__input,
     .movies__search-btn {
         width: 100%;
-        height: 50px;
-    
-        font-size: 28px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    /* Movie list */
+    .movie {
+        gap: 20px;
+    }
+
+    .movie__poster {
+        width: 100px;
+    }
+
+    .movie__title {
+        margin-bottom: 6px;
+        font-size: 22px;
+    }
+
+    .movie__year {
+        margin-bottom: 6px;
+        font-size: 18px;
+    }
+
+    .movie__type {
+        font-size: 18px;
     }
 }

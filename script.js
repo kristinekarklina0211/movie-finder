@@ -78,10 +78,19 @@ function renderMovieList() {
 
         // 2.3 Добавляем разметку внутрь <li>
          newMovie.innerHTML = `
-            <p>${movieTitle}</p>
-            <p>${movieYear}</p>
-            <p>${movieType}</p>
-            <img src="${moviePoster}" alt="Movie poster">
+            <div class="movie">
+                <div class="movie__poster-wrapper">
+                    <img class="movie__poster"
+                        src="${moviePoster}"
+                        alt="Movie poster"
+                    >
+                </div>
+                <movie__text-wrapper>
+                    <p class="movie__title">${movieTitle}</p>
+                    <p class="movie__year">${movieYear}</p>
+                    <p class="movie__type">${movieType}</p>
+                </movie__text-wrapper>
+            </div>
             `
 
         // 2.4 Добавляем <li> в список
