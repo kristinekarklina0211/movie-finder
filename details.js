@@ -35,15 +35,26 @@ function renderMovieDetails() {
 
                 // 2. Добавляю разметку внутрь <div>
                 movieCard.innerHTML = `
-                    <h1>Title: ${data.Title}</h1>
-                    <p>Year: ${data.Year}</p>
-                    <p>Release date: ${data.Released}</p>
-                    <p>Duration: ${data.Runtime}</p>
-                    <p>Genre: ${data.Genre}</p>
-                    <p>Director: ${data.Director}</p>
-                    <p>Writers: ${data.Writer}</p>
-                    <p>Cast: ${data.Actors}</p>
-                    <p>${data.Plot}</p>
+                    <div class="movie-card__container">
+                        <img class="movie-card__poster"
+                        src="${data.Poster}"
+                        alt="Movie poster"
+                        >
+
+                        <div class="movie-card__text">
+                            <h1 class="movie-card__text-title">${data.Title}</h1>
+                            <p>Year: <span class="movie-card__text-data">${data.Year}</span></p>
+                            <p>Rating: <span class="movie-card__text-data">${data.Rated}</span></p>
+                            <p>Release date: <span class="movie-card__text-data">${data.Released}</span></p>
+                            <p>Duration: <span class="movie-card__text-data">${data.Runtime}</span></p>
+                            <p>Genre: <span class="movie-card__text-data">${data.Genre}</span></p>
+                            <p>Director: <span class="movie-card__text-data">${data.Director}</span></p>
+                            <p>Writers: <span class="movie-card__text-data">${data.Writer}</span></p>
+                            <p>Cast: <span class="movie-card__text-data">${data.Actors}</span></p>
+                        </div>
+                    </div>
+
+                    <p class="movie-card__plot">${data.Plot}</p>
                 `
                 // 3. Добавляю <div> на отдельную страницу в HTML
                 movieCardNode.appendChild(movieCard);
