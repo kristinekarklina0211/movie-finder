@@ -83,7 +83,7 @@ body {
 }
 
 .movie__poster {
-    width: 150px;
+    max-width: 150px;
 }
 
 .movie__title {
@@ -170,7 +170,7 @@ body {
     }
 
     .movie__poster {
-        width: 120px;
+        max-width: 120px;
     }
 
     .movie__title {
@@ -239,7 +239,7 @@ body {
     }
 
     .movie__poster {
-        max-width: 100%;
+        max-width: 100px;
     }
 
     .movie__title {
@@ -263,14 +263,11 @@ body {
     }
 
     .movie-card__container {
-        flex-direction: row-reverse;
-        align-items: flex-start;
         gap: 20px;
     }
 
     .movie-card__poster {
-        margin-top: 4px;
-        max-width: 150px;
+        display: none;
     }
 
     .movie-card {
