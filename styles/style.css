@@ -3,6 +3,7 @@ body {
     color: #000;
     font-style: normal;
     font-weight: 400;
+    font-size: 20px;
     line-height: normal;
 }
 
@@ -141,6 +142,15 @@ body {
 
 .movie-card__plot {
     margin-top: 30px;
+}
+
+/* Error message */
+.error-message_hidden {
+    display: none;
+}
+
+.error-message_empty {
+    color: red;
 }
 
 @media (max-width: 961px) {    

@@ -5,6 +5,7 @@ const apiKey = "6dde023";
 const inputNode = document.querySelector(".js-movies__input"); // Поле ввода названия фильма
 const searchBtnNode = document.querySelector(".js-movies__search-btn"); // Кнопка "Search"
 const movieListNode = document.querySelector(".js-movie-list"); // Список фильмов
+const errorMessageNode = document.querySelector(".js-error-message"); // Сообщение об ошибке
 
 // Объявляю основную переменную, которая содержит массив фильмов
 let movies = [];
@@ -16,7 +17,8 @@ searchBtnNode.addEventListener("click", function() {
     // 1. Получаю значение из поля ввода
     const movieTitle = getMovieFromUser(); // Сохраняю введённое название фильма
 
-    if (!movieTitle) { // Если название не введено — выхожу из функции
+    if (!movieTitle) { // Если название не введено — выводится текст красным "Please enter a movie title!"
+        showError("Please enter a movie title!");
         return;
     }
 
@@ -35,6 +37,14 @@ movieListNode.addEventListener("click", function(event) {
         goToMoviePage(movieElement); // Открывается страница фильма
     }
 });
+
+// 3. Пользователь начинает вводить название фильма
+inputNode.addEventListener("input", function() {
+    if (inputNode.value.trim().length > 0) {
+        errorMessageNode.classList.add("error-message_hidden");
+    }
+});
+
 
 // ПОДФУНКЦИИ ----------------------------------------------------------------
 
@@ -120,4 +130,12 @@ function goToMoviePage(movieElement) {
     
     // Добавляю этот ID в URL и перехожу на страницу movie.html
     location.href = `movie.html?imdbID=${id}`;
+}
+
+// Отображение ошибок
+
+function showError(message) {
+    errorMessageNode.innerText = message;
+    errorMessageNode.classList.remove("error-message_hidden");
+    errorMessageNode.classList.add("error-message_empty");
 }
