@@ -18,7 +18,7 @@ searchBtnNode.addEventListener("click", function() {
     const movieTitle = getMovieFromUser(); // Сохраняю введённое название фильма
 
     if (!movieTitle) { // Если название не введено — выводится текст красным "Please enter a movie title!"
-        showError("Please enter a movie title!");
+        showError("Please enter a movie title!", "empty");
         return;
     }
 
@@ -78,6 +78,11 @@ function findMovie(movieTitle) {
                 // Вывожу список фильмов
                 renderMovieList();
             }
+
+            if (data.Response === "False") {
+                showError("Movies not found.", "not-found");
+                return;
+            }
         });
 }
 
@@ -134,8 +139,15 @@ function goToMoviePage(movieElement) {
 
 // Отображение ошибок
 
-function showError(message) {
+function showError(message, type) {
     errorMessageNode.innerText = message;
     errorMessageNode.classList.remove("error-message_hidden");
+    if (type === "empty") {
+        errorMessageNode.classList.remove("error-message_empty", "error-message_not-found");
+        errorMessageNode.classList.add("error-message_empty");
+    } else {
+        errorMessageNode.classList.remove("error-message_empty", "error-message_not-found");
+        errorMessageNode.classList.add("error-message_not-found");
+    }
     errorMessageNode.classList.add("error-message_empty");
 }

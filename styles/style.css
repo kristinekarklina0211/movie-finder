@@ -145,12 +145,22 @@ body {
 }
 
 /* Error message */
+.error-message {
+    padding-left: 16px;
+    font-size: 24px;
+}
+
 .error-message_hidden {
     display: none;
 }
 
 .error-message_empty {
     color: red;
+}
+
+.error-message_not-found {
+    font-weight: 700;
+    color: #000;
 }
 
 @media (max-width: 961px) {    
@@ -224,6 +234,11 @@ body {
     .movie-card__plot {
         margin-top: 24px;
     }
+
+    /* Error message */
+    .error-message {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 767px) {    
@@ -291,5 +306,10 @@ body {
 
     .movie-card__plot {
         margin-top: 20px;
+    }
+
+    /* Error message */
+    .error-message {
+        font-size: 16px;
     }
 }
